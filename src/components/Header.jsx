@@ -26,7 +26,6 @@ import {
 const pages = [
   { name: "HomePage", link: "/" },
   { name: "CreateCard", link: "/create-card" },
-  { name: "Profile", link: "/profile" },
 ];
 
 export default function Header() {
