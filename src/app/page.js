@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Homepage() {
   return (
     <>
-      <main className="h-[50vh] w-full bg-gradient-to-r from-cyan-400 to-teal-500 text-white text-center flex flex-col justify-center items-center">
+      <main className="h-[65vh] w-full bg-gradient-to-r from-[#A9B4C2] to-[#EEF1EF] text-[#496c78] text-center flex flex-col justify-center items-center">
         <h1 className="text-4xl font-semibold mb-4 drop-shadow-lg">
           Card Generator
         </h1>
@@ -14,7 +14,7 @@ export default function Homepage() {
           <p className="text-lg mb-6">
             Create beautiful, personalized greeting cards for your loved ones.
           </p>
-          <button className="btn btn-light px-6 py-3 text-lg rounded-lg shadow-md hover:bg-teal-600 transition duration-300">
+          <button className="bg-[#134b70] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#508c9b] hover:scale-105 transition duration-300">
             Create Your Card
           </button>
         </section>

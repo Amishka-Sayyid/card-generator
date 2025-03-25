@@ -51,22 +51,29 @@ export default function Header() {
     <AppBar position="static" sx={{ backgroundColor: "#7D98A1" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/*  <Image
+            src="/logo/header-logo.png"
+            alt="Local Skills Hub"
+            width={80}
+            height={80}
+            className="rounded-lg object-cover hidden md:flex mr-1"
+          /> */}
           <Typography
             variant="h6"
             noWrap
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: " Arial, Helvetica, sans-serif",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".2rem",
               color: "#EEF1EF", // Light color for the text
               textDecoration: "none",
             }}
           >
-            Cards
+            GreetingCards
           </Typography>
+
           {/* Responsive Menu for smaller screens */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -110,7 +117,13 @@ export default function Header() {
           </Box>
 
           {/* Logo or App Name */}
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/*  <Image
+            src="/logo/header-logo.png"
+            alt="Local Skills Hub"
+            width={80}
+            height={80}
+            className="rounded-lg object-cover flex md:hidden mr-1"
+          /> */}
           <Typography
             variant="h5"
             noWrap
@@ -119,14 +132,21 @@ export default function Header() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: " Arial, Helvetica, sans-serif",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: { xs: ".05rem", sm: ".1rem", md: ".1rem" },
+
+              fontSize: {
+                xs: "1rem",
+                sm: "1.5rem",
+                md: "2rem",
+                lg: "2.2rem",
+              },
               color: "#EEF1EF", // Light color for the text
               textDecoration: "none",
             }}
           >
-            Cards
+            GreetingCards
           </Typography>
 
           {/* Navigation buttons for larger screens */}
@@ -152,12 +172,19 @@ export default function Header() {
               </Button>
             ))}
           </Box>
+
           {/* User Action (Sign In, Sign Up or User Profile) */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="User Actions">
               <SignedOut>
-                <SignInButton sx={{ color: "#EEF1EF" }} />
-                <SignUpButton sx={{ color: "#EEF1EF" }} />
+                <SignInButton
+                  sx={{ color: "#EEF1EF" }}
+                  className="bg-[#8fb0bb] text-white px-4 py-2 rounded-lg hover:bg-[#A9B4C2] hover:scale-105 transition duration-300 cursor-pointer m-3"
+                />
+                <SignUpButton
+                  sx={{ color: "#EEF1EF" }}
+                  className="bg-[#8fb0bb] text-white px-4 py-2 rounded-lg hover:bg-[#A9B4C2] hover:scale-105 transition duration-300 cursor-pointer m-3"
+                />
               </SignedOut>
               <SignedIn>
                 <UserButton />
