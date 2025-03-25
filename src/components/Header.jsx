@@ -48,7 +48,14 @@ export default function Header() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#7D98A1" }}>
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: "#7D98A1",
+        minHeight: "10vh",
+        placeContent: "center",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/*  <Image
@@ -71,7 +78,7 @@ export default function Header() {
               textDecoration: "none",
             }}
           >
-            GreetingCards
+            Cards
           </Typography>
 
           {/* Responsive Menu for smaller screens */}
@@ -146,7 +153,7 @@ export default function Header() {
               textDecoration: "none",
             }}
           >
-            GreetingCards
+            Cards
           </Typography>
 
           {/* Navigation buttons for larger screens */}
@@ -179,7 +186,7 @@ export default function Header() {
               <SignedOut>
                 <SignInButton
                   sx={{ color: "#EEF1EF" }}
-                  className="bg-[#8fb0bb] text-white px-4 py-2 rounded-lg hover:bg-[#A9B4C2] hover:scale-105 transition duration-300 cursor-pointer m-3"
+                  className="bg-[#8fb0bb] text-white px-4 py-2 rounded-lg hover:bg-[#A9B4C2] hover:scale-105 transition duration-300 cursor-pointer "
                 />
                 <SignUpButton
                   sx={{ color: "#EEF1EF" }}
