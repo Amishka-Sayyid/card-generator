@@ -14,9 +14,11 @@ export default function Homepage() {
           <p className="text-lg mb-6">
             Create beautiful, personalized greeting cards for your loved ones.
           </p>
-          <button className="bg-[#134b70] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#508c9b] hover:scale-105 transition duration-300">
-            Create Your Card
-          </button>
+          <Link href="/create-card">
+            <button className="bg-[#134b70] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#508c9b] hover:scale-105 transition duration-300">
+              Create Your Card
+            </button>
+          </Link>
         </section>
       </main>
     </>
