@@ -1,9 +1,11 @@
 import Link from "next/link";
-
+import homeStyles from "./main.module.css";
 export default function Homepage() {
   return (
     <>
-      <main className="h-[80vh] w-full bg-gradient-to-r from-[#A9B4C2] to-[#EEF1EF] text-[#496c78] text-center flex flex-col justify-center items-center">
+      <main
+        className={` ${homeStyles.main} h-[80vh]  text-[#496c78] text-center flex flex-col justify-center items-center`}
+      >
         <h1 className="text-4xl font-semibold mb-4 drop-shadow-lg">
           Card Generator
         </h1>
