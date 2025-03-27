@@ -2,6 +2,12 @@
 
 ---
 
+# resources
+
+https://medium.com/globant/image-generation-using-openai-api-with-nodejs-28f8d9a29a44
+
+---
+
 **🎉 What’s this project about?**
 
 The Card Generator is a web app that allows users to create simple, personalized greeting cards. This app leverages OpenAI's image generation capabilities to produce unique and visually appealing greeting card designs. Users can add text to templates, generate custom images, and save them. The primary goal is to create a smooth and easy process for making personalized cards with a modern and intuitive user interface.
