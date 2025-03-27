@@ -4,16 +4,16 @@ export default function Homepage() {
   return (
     <>
       <main
-        className={` ${homeStyles.main} h-[80vh]  text-[#496c78] text-center flex flex-col justify-center items-center`}
+        className={` ${homeStyles.main} h-[80vh]  text-[#d1e0e5] text-center flex flex-col justify-center items-center `}
       >
-        <h1 className="text-4xl font-semibold mb-4 drop-shadow-lg">
+        <h1 className="text-6xl font-semibold mb-4 drop-shadow-lg">
           Card Generator
         </h1>
         <section className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2">
+          <h2 className="text-4xl font-bold mb-2">
             Welcome to the Card Generator!
           </h2>
-          <p className="text-lg mb-6">
+          <p className="text-2xl mb-6">
             Create beautiful, personalized greeting cards for your loved ones.
           </p>
           <Link href="/create-card">
