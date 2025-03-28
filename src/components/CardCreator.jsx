@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import axios from "axios"; // Importing axios for making HTTP requests
 
 export default function CardCreator() {
   const [prompt, setPrompt] = useState(""); // State to hold the image prompt
@@ -10,24 +9,30 @@ export default function CardCreator() {
 
   // Function to handle card creation
   const handleCreateCard = async () => {
-    setLoading(true); // Set loading to true while processing the request
+    setLoading(true);
+
+    console.log("Prompt:", prompt);
 
     try {
-      // Send a POST request to your Next.js API using axios
-      const response = await axios.post("/api/create", {
-        prompt, // Sending the prompt from the input field
+      const response = await fetch("/api/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
       });
 
-      if (response.data.imageUrl) {
-        setImageUrl(response.data.imageUrl); // Set the image URL if the request was successful
+      const data = await response.json();
+      if (data.imageUrl) {
+        setImageUrl(data.imageUrl);
       } else {
-        alert("Error: " + response.data.error); // Handle error if no imageUrl is returned
+        alert("Error: " + data.error);
       }
-    } catch (err) {
-      alert("Error: " + err.message); // Catch any other errors during the request
+    } catch (error) {
+      console.error("Error creating card:", error);
+      alert("Error creating card.");
     }
-
-    setLoading(false); // Set loading to false after processing
+    setLoading(false);
   };
 
   return (
