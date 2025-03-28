@@ -10,23 +10,23 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "OpenAI API key is not set" });
     }
 
-    // Create an instance of the OpenAI client
-    const openai = new OpenAI({
-      apiKey: openaiApiKey, // API key from environment
-    });
-
     try {
-      // Call the image generation API
+      const openai = new OpenAI({
+        apiKey: openaiApiKey, // API key from environment
+      });
+
+      // Call the OpenAI image generation API
       const response = await openai.images.generate({
         prompt: prompt,
         n: 1,
-        size: "512x512", // You can change the size to match your needs
+        size: "512x512", // You can change the size if needed
       });
 
       // Extract the image URL from the response
       const imageUrl = response.data[0].url;
       res.status(200).json({ imageUrl });
     } catch (err) {
+      console.error("Error generating image:", err);
       res.status(500).json({ error: err.message });
     }
   } else {
