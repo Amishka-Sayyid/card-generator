@@ -1,17 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useUser } from "@clerk/clerk-react"; // Clerk hook to get user information
 
 export default function CardCreator() {
+  const { user } = useUser(); // Clerk user object (contains userId, email, etc.)
   const [prompt, setPrompt] = useState(""); // State to hold the image prompt
   const [imageUrl, setImageUrl] = useState(""); // State to store the generated image URL
   const [loading, setLoading] = useState(false); // Loading state to show a spinner or button text
 
   // Function to handle card creation
   const handleCreateCard = async () => {
+    if (!user) {
+      alert("User not authenticated.");
+      return;
+    }
+
     setLoading(true);
 
     console.log("Prompt:", prompt);
+    console.log("User ID:", user.id); // Log the user ID for debugging
 
     try {
       const response = await fetch("/api/create", {
@@ -19,7 +27,10 @@ export default function CardCreator() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ prompt }),
+        body: JSON.stringify({
+          prompt,
+          userId: user.id, // Include the userId in the request body
+        }),
       });
 
       const data = await response.json();
