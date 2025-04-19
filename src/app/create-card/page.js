@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { db } from "@/utils/dbConnection";
 import CardCreator from "@/components/CardCreator";
+import InputAreaExample from "@/components/InputAreaExample";
 
 export default async function CreateCardPage() {
   // Fetch userId from Clerk's auth function (server-side)
@@ -33,6 +34,8 @@ export default async function CreateCardPage() {
         </p>
 
         <CardCreator />
+
+        <InputAreaExample />
       </main>
     </>
   );
