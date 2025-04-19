@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import InputTextBox from "./InputTextBox"; // adjust the path if needed
+import InputTextBox from "./InputTextBox";
 
 export default function InputAreaExample() {
   const [textboxContent, setTextboxContent] = useState("");
