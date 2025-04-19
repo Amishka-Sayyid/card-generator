@@ -1,5 +1,5 @@
 import React from "react";
-import "./InputTextBox.css"; // Optional, for styling
+import "./InputTextBox.css";
 
 export default function InputTextBox({ onInputChange, textboxContent }) {
   return (
